@@ -20,26 +20,22 @@ const Footer = () => {
           />
         </VStack>
 
-        <HStack spacing={['2', '10']} justifyContent={'center'}>
+        <HStack
+          spacing={['2', '10']}
+          justifyContent={'center'}
+          color={'white'}
+          fontSize={'50'}
+        >
           <a
             href="https://www.youtube.com/channel/UCfK4hCj7HcsPwCxizMc6Viw"
-            target="_blank"
-            rel="noreferrer"
+            target={'blank'}
           >
             <TiSocialYoutubeCircular />
           </a>
-          <a
-            href="https://www.instagram.com/itisraunak/"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://www.instagram.com/itisraunak/" target={'blank'}>
             <TiSocialInstagramCircular />
           </a>
-          <a
-            href="https://github.com/itsraunak"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://github.com/itsraunak" target={'blank'}>
             <DiGithub />
           </a>
         </HStack>

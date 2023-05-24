@@ -26,7 +26,7 @@ const Header = () => {
   const user = {
     role: 'admin',
   };
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   const logoutHandler = () => {
     console.log('Logout');
     onClose();
@@ -52,7 +52,7 @@ const Header = () => {
       <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerHeader borderBottomWidth={'1px'}>COURSE BUNDLER</DrawerHeader>
+          <DrawerHeader borderBottomWidth={'1px'}>LEARN CRAFT</DrawerHeader>
 
           <DrawerBody>
             {/* prettier-ignore */}
