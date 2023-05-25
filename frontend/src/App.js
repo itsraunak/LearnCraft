@@ -11,6 +11,10 @@ import ResetPassword from './components/Auth/ResetPassword';
 import Contact from './components/Contact/Contact';
 import Request from './components/Request/Request';
 import About from './components/About/About';
+import NotFound from './components/NotFound/NotFound';
+import PaymentFail from './components/Payments/PaymentFail';
+import PaymentSuccess from './components/Payments/PaymentSuccess';
+import Subscribe from './components/Payments/Subscribe';
 
 function App() {
   return (
@@ -26,6 +30,10 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
         <Route path="resetpassword/:token" element={<ResetPassword />} />
+        <Route path="/subscribe" element={<Subscribe />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/paymentsuccess" element={<PaymentSuccess />} />
+        <Route path="/paymentfail" element={<PaymentFail />} />
       </Routes>
       <Footer />
     </Router>
