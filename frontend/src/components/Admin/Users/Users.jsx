@@ -47,7 +47,7 @@ const Users = () => {
       minH={'100vh'}
       templateColumns={['1fr', '5fr 1fr']}
     >
-      <Box p={['0', '15']} overflowX={'auto'}>
+      <Box p={['0', '16']} overflowX={'auto'}>
         <Heading
           textTransform={'uppercase'}
           children="All Users"
