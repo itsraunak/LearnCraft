@@ -67,7 +67,7 @@ const AdminCourses = () => {
       <Box p={['0', '8']} overflowX={'auto'}>
         <Heading
           textTransform={'uppercase'}
-          children="All Users"
+          children="All Courses"
           my={'16'}
           textAlign={['center', 'left']}
         />
