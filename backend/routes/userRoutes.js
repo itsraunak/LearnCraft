@@ -2,6 +2,7 @@ import express from "express";
 import {
   addToPlaylist,
   changePassword,
+  deleteMyProfile,
   deleteUser,
   forgetPassword,
   getAllCourses,

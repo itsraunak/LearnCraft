@@ -271,3 +271,23 @@ export const deleteUser = catchAsyncError(async (req, res, next) => {
     message: "User Deleted Successfully",
   });
 });
+
+export const deleteMyProfile = catchAsyncError(async (req, res, next) => {
+  const user = await User.findById(req.user._id);
+
+  await cloudinary.v2.uploader.destroy(user.avatar.public_id);
+
+  // cancel subscription
+
+  await user.deleteOne();
+
+  res
+    .status(200)
+    .cookie("token", null, {
+      expires: new Date(Date.now()),
+    })
+    .json({
+      success: true,
+      message: "User Deleted Successfully",
+    });
+});
