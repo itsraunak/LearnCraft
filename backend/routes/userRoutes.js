@@ -2,7 +2,9 @@ import express from "express";
 import {
   addToPlaylist,
   changePassword,
+  deleteUser,
   forgetPassword,
+  getAllCourses,
   getMyProfile,
   login,
   logout,
@@ -11,8 +13,9 @@ import {
   resetPassword,
   updateProfile,
   updateProfilePicture,
+  updateUserRole,
 } from "./../controllers/userController.js";
-import { isAuthenticated } from "../middlewares/auth.js";
+import { authorizeAdmin, isAuthenticated } from "../middlewares/auth.js";
 import singleUpload from "../middlewares/multer.js";
 
 const router = express.Router();
@@ -51,5 +54,18 @@ router.route("/addtoplaylist").post(isAuthenticated, addToPlaylist);
 
 // Remove form Playlist
 router.route("/removefromplaylist").delete(isAuthenticated, removeFromPlaylist);
+
+// *********ADMIN ROUTES ****************
+
+// Get All Users
+router
+  .route("/admin/users")
+  .get(isAuthenticated, authorizeAdmin, getAllCourses);
+
+// Update User Role
+router
+  .route("/admin/user/:id")
+  .put(isAuthenticated, authorizeAdmin, updateUserRole)
+  .delete(isAuthenticated, authorizeAdmin, deleteUser);
 
 export default router;

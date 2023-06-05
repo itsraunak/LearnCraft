@@ -226,3 +226,34 @@ export const removeFromPlaylist = catchAsyncError(async (req, res, next) => {
     message: "Removed From Playlist",
   });
 });
+
+// ***********ADMIN Controller ****************
+
+export const getAllCourses = catchAsyncError(async (req, res, next) => {
+  const users = await User.find({});
+  res.status(200).json({
+    success: true,
+    users,
+  });
+});
+
+export const updateUserRole = catchAsyncError(async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) return next(new ErrorHandler("Invalid User Id", 404));
+
+  if (user.role === "user") {
+    user.role = "admin";
+  } else {
+    user.role = "user";
+  }
+
+  await user.save();
+
+  res.status(200).json({
+    success: true,
+    message: "Role Updated Successfully",
+  });
+});
+
+export const deleteUser = catchAsyncError(async (req, res, next) => {});
