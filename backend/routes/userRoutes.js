@@ -32,6 +32,10 @@ router.route("/logout").get(logout);
 // Get my profile
 router.route("/me").get(isAuthenticated, getMyProfile);
 
+// Delete My profile
+
+router.route("/me").delete(isAuthenticated, deleteMyProfile);
+
 // Change Pasword
 router.route("/changepassword").put(isAuthenticated, changePassword);
 
