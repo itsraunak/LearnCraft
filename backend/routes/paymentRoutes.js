@@ -1,5 +1,5 @@
 import express from "express";
-import { isAuthenticated } from "../middlewares/auth.js";
+import { authorizeSubscribers, isAuthenticated } from "../middlewares/auth.js";
 import {
   buySubscription,
   cancelSubscription,
